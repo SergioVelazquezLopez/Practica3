@@ -16,13 +16,21 @@ public class Cuenta {
 
     public void ingresar(double x) {
         this.saldo += x;
+        // Registramos el movimiento en H
+        this.mMovimientos.add(new Movimiento(x, Movimiento.Signo.H, "Ingreso en cuenta"));
     }
 
     public void retirar(double x) {
         this.saldo -= x;
+        // Registramos el movimiento en D
+        this.mMovimientos.add(new Movimiento(x, Movimiento.Signo.D, "Retiro de cuenta"));
     }
     
     public Double getSaldo() {
         return saldo;
+    }
+
+    public List<Movimiento> getmMovimientos() {
+        return mMovimientos;
     }
 }

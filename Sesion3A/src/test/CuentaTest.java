@@ -32,8 +32,8 @@ class CuentaTest {
         Cuenta cuenta = new Cuenta("12345", "Titular de Prueba");
         cuenta.ingresar(1000.0);
         
-        // Al estar ingresar() vacío, devuelve 0 y el test falla 
         assertEquals(1000.0, cuenta.getSaldo());
+        assertEquals(1, cuenta.getmMovimientos().size()); // Verificamos que se registro el movimiento
     }
 
     @Test
@@ -41,8 +41,8 @@ class CuentaTest {
         Cuenta cuenta = new Cuenta("12345", "Titular de Prueba");
         cuenta.retirar(500.0);
         
-        // Al estar retirar() vacío, devuelve 0 y el test falla 
         assertEquals(-500.0, cuenta.getSaldo());
+        assertEquals(1, cuenta.getmMovimientos().size()); // Verificamos que se registro el movimiento
     }
 
 }
