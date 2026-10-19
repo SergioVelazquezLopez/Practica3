@@ -14,10 +14,12 @@ public class Cuenta {
         this.nTitular = titular;
     }
 
-    public void ingresar(double x) {    
+    public void ingresar(double x) {
+        this.saldo += x;
     }
 
     public void retirar(double x) {
+        this.saldo -= x;
     }
     
     public Double getSaldo() {
